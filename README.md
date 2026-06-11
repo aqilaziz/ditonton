@@ -11,8 +11,14 @@ Submission akhir kelas Menjadi Flutter Developer Expert.
 - Clean Architecture dengan pemisahan data, domain, dan presentation.
 - State management menggunakan BLoC/Cubit dari `flutter_bloc`.
 - SSL pinning untuk request API TMDB.
-- Firebase Analytics dan Crashlytics monitoring.
+- Firebase Analytics dan Crashlytics monitoring dengan konfigurasi Android resmi.
 - CI otomatis dengan GitHub Actions.
+
+## Bukti Tambahan
+
+- `screenshots/firebase-analytics-dashboard.png`: Firebase Analytics menampilkan active user.
+- `screenshots/firebase-crashlytics-dashboard.png`: Firebase Crashlytics menampilkan crash data.
+- `screenshots/github-actions-ci.png`: GitHub Actions berhasil menjalankan format, analyze, dan test.
 
 ## Verifikasi
 
@@ -20,4 +26,5 @@ Submission akhir kelas Menjadi Flutter Developer Expert.
 dart format --set-exit-if-changed .
 flutter analyze
 flutter test --coverage
+flutter build apk --debug
 ```

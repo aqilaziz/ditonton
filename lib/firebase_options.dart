@@ -30,11 +30,11 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDDitontonDemoAnalyticsKey',
-    appId: '1:123456789012:android:0123456789abcdef012345',
-    messagingSenderId: '123456789012',
-    projectId: 'ditonton-dicoding-demo',
-    storageBucket: 'ditonton-dicoding-demo.appspot.com',
+    apiKey: 'AIzaSyB4KgxV7MlS2kb89UMdBMACUZ6dCLVvKFg',
+    appId: '1:455641348556:android:1d740c34b23099beda8569',
+    messagingSenderId: '455641348556',
+    projectId: 'news-app-61082',
+    storageBucket: 'news-app-61082.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

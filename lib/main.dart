@@ -28,6 +28,12 @@ import 'package:ditonton/injection.dart' as di;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FirebaseMonitoring.initialize();
+  if (const bool.fromEnvironment('DITONTON_RECORD_FATAL')) {
+    await FirebaseMonitoring.recordFatalForVerification();
+  }
+  if (const bool.fromEnvironment('DITONTON_FORCE_CRASH')) {
+    await FirebaseMonitoring.forceCrashForVerification();
+  }
   await di.init();
   runApp(MyApp());
 }

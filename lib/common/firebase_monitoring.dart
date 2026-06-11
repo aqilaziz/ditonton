@@ -16,7 +16,11 @@ class FirebaseMonitoring {
       );
 
       analytics = FirebaseAnalytics.instance;
+      await analytics?.setAnalyticsCollectionEnabled(true);
       await analytics?.logAppOpen();
+      await analytics?.logEvent(name: 'ditonton_app_started');
+
+      await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
 
       FlutterError.onError =
           FirebaseCrashlytics.instance.recordFlutterFatalError;
@@ -32,5 +36,18 @@ class FirebaseMonitoring {
 
   static Future<void> logScreenView(String screenName) async {
     await analytics?.logScreenView(screenName: screenName);
+  }
+
+  static Future<void> recordFatalForVerification() async {
+    await FirebaseCrashlytics.instance.recordError(
+      StateError('Ditonton Crashlytics verification'),
+      StackTrace.current,
+      reason: 'Firebase Crashlytics verification event',
+      fatal: true,
+    );
+  }
+
+  static Future<void> forceCrashForVerification() async {
+    FirebaseCrashlytics.instance.crash();
   }
 }
